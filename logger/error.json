@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "errMessage": {},
+    "module": "signup.js",
+    "timestamp": "2024-09-12T20:22:29.307Z",
+    "fixed": false
+  },
+  {
+    "id": 2,
+    "errMessage": {},
+    "module": "createUser.js",
+    "timestamp": "2024-09-12T20:26:32.365Z",
+    "fixed": false
+  },
+  {
+    "id": 3,
+    "errMessage": {},
+    "module": "createUser.js",
+    "timestamp": "2024-09-12T20:26:43.534Z",
+    "fixed": false
+  },
+  {
+    "id": 4,
+    "errMessage": {},
+    "module": "getUserDataByMail.js",
+    "timestamp": "2024-09-13T06:28:59.846Z",
+    "fixed": false
+  },
+  {
+    "id": 5,
+    "errMessage": {},
+    "module": "getUserDataByMail.js",
+    "timestamp": "2024-09-13T06:29:30.734Z",
+    "fixed": false
+  },
+  {
+    "id": 6,
+    "errMessage": {},
+    "module": "signin.js",
+    "timestamp": "2024-09-13T06:44:18.504Z",
+    "fixed": false
+  },
+  {
+    "id": 7,
+    "errMessage": {},
+    "module": "getDataByMail.js",
+    "timestamp": "2024-09-13T07:31:43.719Z",
+    "fixed": false
+  },
+  {
+    "id": 8,
+    "errMessage": {
+      "code": "ER_DUP_ENTRY",
+      "errno": 1062,
+      "sqlState": "23000",
+      "sqlMessage": "Duplicate entry 'vaidityatanwar2207@gmail.com' for key 'seller.email'",
+      "sql": "INSERT INTO seller(\n            id,\n            first_name,\n            last_name,\n            email,\n            phone,\n            password,\n            works_at,\n            position\n        )\n            VALUES(\n            '178ee142-eac5-4129-9fce-8c4ed96d791e',\n            'Vaiditya',\n            'Tanwar',\n            'vaidityatanwar2207@gmail.com',\n            '9256225326',\n            '$2a$11$6y6Za7Xbx1zkV9ukklFMuudLFoN7ZG5Q.rUeVywtjy3ezfeTimhCe',\n            'PMO',\n            'Manager'\n        )"
+    },
+    "module": "createSeller.js",
+    "timestamp": "2024-09-13T07:34:16.216Z",
+    "fixed": false
+  },
+  {
+    "id": 9,
+    "errMessage": {
+      "code": "ER_PARSE_ERROR",
+      "errno": 1064,
+      "sqlState": "42000",
+      "sqlMessage": "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[object Promise], type, place, show_name, description, cd8ff637-cd74-4c61-b418-2' at line 4",
+      "sql": "INSERT INTO availableTickets \n    (id, type, place, show_name, description, seller, time, date, available, noOfTickets) \n    VALUES \n    ([object Promise], type, place, show_name, description, cd8ff637-cd74-4c61-b418-28fe0563dab0, time, date, true, 10)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:05:04.857Z",
+    "fixed": false
+  },
+  {
+    "id": 10,
+    "errMessage": {
+      "code": "ER_TRUNCATED_WRONG_VALUE",
+      "errno": 1292,
+      "sqlState": "22007",
+      "sqlMessage": "Incorrect date value: 'date' for column 'date' at row 1",
+      "sql": "INSERT INTO availableTickets \n        (id, type, place, show_name, description, seller, time, date, available, noOfTickets) \n        VALUES \n        ('b523b601-ac3c-4370-b314-b317477a9574', 'type', 'place', 'show_name', 'description', 'cd8ff637-cd74-4c61-b418-28fe0563dab0', 'time', 'date', true, 10)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:06:07.762Z",
+    "fixed": false
+  },
+  {
+    "id": 11,
+    "errMessage": {
+      "code": "ER_TRUNCATED_WRONG_VALUE",
+      "errno": 1292,
+      "sqlState": "22007",
+      "sqlMessage": "Incorrect date value: '11/11/2021' for column 'date' at row 1",
+      "sql": "INSERT INTO availableTickets \n        (id, type, place, show_name, description, seller, time, date, available, noOfTickets) \n        VALUES \n        ('9b513c52-c8dc-49e4-a266-3a44ff3db317', 'type', 'place', 'show_name', 'description', 'cd8ff637-cd74-4c61-b418-28fe0563dab0', 'time', '11/11/2021', true, 10)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:06:31.567Z",
+    "fixed": false
+  },
+  {
+    "id": 12,
+    "errMessage": {
+      "code": "ER_TRUNCATED_WRONG_VALUE",
+      "errno": 1292,
+      "sqlState": "22007",
+      "sqlMessage": "Incorrect date value: '12/12/2012' for column 'date' at row 1",
+      "sql": "INSERT INTO availableTickets \n        (id, type, title, place, show_name, description, seller, time, date, available, noOfTickets) \n        VALUES \n        ('de51a7ea-2750-417b-8500-67c130f39f63', 'culture', 'Red Fort', 'Delhi', NULL, 'a good ticket', 'vaidityatanwar2207@gmail.com', '9AM to 10PM', '12/12/2012', true, 20)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:26:01.139Z",
+    "fixed": false
+  },
+  {
+    "id": 13,
+    "errMessage": {
+      "code": "ER_TRUNCATED_WRONG_VALUE",
+      "errno": 1292,
+      "sqlState": "22007",
+      "sqlMessage": "Incorrect date value: '12/12/2012' for column 'date' at row 1",
+      "sql": "INSERT INTO availableTickets \n        (id, type, title, place, show_name, description, seller, time, date, available, noOfTickets) \n        VALUES \n        ('79c09ae2-8054-4320-bfb5-492154c6b488', 'culture', 'Red Fort', 'Delhi', NULL, 'a good ticket', 'vaidityatanwar2207@gmail.com', '9AM to 10PM', '12/12/2012', true, 20)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:26:20.341Z",
+    "fixed": false
+  },
+  {
+    "id": 14,
+    "errMessage": {
+      "code": "ER_NO_REFERENCED_ROW_2",
+      "errno": 1452,
+      "sqlState": "23000",
+      "sqlMessage": "Cannot add or update a child row: a foreign key constraint fails (`expedition`.`availabletickets`, CONSTRAINT `availabletickets_ibfk_1` FOREIGN KEY (`seller`) REFERENCES `seller` (`id`))",
+      "sql": "INSERT INTO availableTickets \n        (id, type, title, place, show_name, description, seller, time, date, available, noOfTickets) \n        VALUES \n        ('072c40f3-893c-4880-b0a3-237831a527fb', 'culture', 'Red Fort', 'Delhi', NULL, 'a good ticket', 'vaidityatanwar2207@gmail.com', '9AM to 10PM', '2012-01-01', true, 20)"
+    },
+    "module": "createTicket.js",
+    "timestamp": "2024-09-13T13:27:01.652Z",
+    "fixed": false
+  },
+  {
+    "id": 15,
+    "errMessage": {},
+    "module": "initializeServer",
+    "timestamp": "2024-09-24T16:00:01.712Z",
+    "fixed": false
+  },
+  {
+    "id": 16,
+    "errMessage": {},
+    "module": "initializeServer",
+    "timestamp": "2024-09-24T16:00:27.492Z",
+    "fixed": false
+  },
+  {
+    "id": 17,
+    "errMessage": {},
+    "module": "initializeServer",
+    "timestamp": "2024-09-24T16:00:47.158Z",
+    "fixed": false
+  },
+  {
+    "id": 18,
+    "errMessage": {},
+    "module": "initializeServer",
+    "timestamp": "2024-09-24T16:01:30.745Z",
+    "fixed": false
+  }
+]
