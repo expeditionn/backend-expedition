@@ -166,5 +166,12 @@
     "module": "initializeServer",
     "timestamp": "2024-09-24T16:01:30.745Z",
     "fixed": false
+  },
+  {
+    "id": 19,
+    "errMessage": "{\"message\":\"Failed to open the referenced table 'seller'\",\"code\":\"ER_FK_CANNOT_OPEN_PARENT\",\"errno\":1824,\"sql\":\"CREATE TABLE IF NOT EXISTS ticketsSold (\\n    id VARCHAR(255) PRIMARY KEY,\\n    place VARCHAR(255) NOT NULL,\\n    show_name VARCHAR(255),\\n    buyer VARCHAR(255) NOT NULL,\\n    seller VARCHAR(255) NOT NULL,\\n    time VARCHAR(20),\\n    date DATE,\\n    time_of_booking TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\\n    FOREIGN KEY (buyer) REFERENCES user(id),\\n    FOREIGN KEY (seller) REFERENCES seller(id)\\n);\\n\",\"sqlState\":\"HY000\",\"sqlMessage\":\"Failed to open the referenced table 'seller'\"}",
+    "module": "Tickets Table check failed",
+    "timestamp": "2024-09-29T15:37:02.887Z",
+    "fixed": false
   }
 ]
