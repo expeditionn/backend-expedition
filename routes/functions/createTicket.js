@@ -1,4 +1,3 @@
-import logger from "../../logger/index.js";
 import getDataByMail from "../../database/functions/getDataByMail.js";
 import formatter from "../../helpers/formatter.js";
 import createTicket from "../../database/functions/createTicket.js";
@@ -41,7 +40,6 @@ export default ({
             res.status(200).json({id: result.id});
             return;
         } catch (error) {
-            logger.errLogger(error, 'createTicket.js');
             console.error('Error in createTicket.js:', error);
             res.status(500).json({err: 'Internal Server Error'});
             return;

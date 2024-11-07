@@ -1,5 +1,4 @@
 import bcrypt from 'bcryptjs';
-import logger from '../logger/index.js';
 
 const hash = async (inp) => {
     try {
@@ -8,7 +7,6 @@ const hash = async (inp) => {
         return hashed;
     } catch (error) {
         console.error('Error in hash.js:', error);
-        logger.errLogger(error, 'hash.js');
         return false;
     }
 }
@@ -19,7 +17,6 @@ const compare = async (inp, hash) => {
         return isMatch;
     } catch (error) {
         console.error('Error in hash.js:', error);
-        logger.errLogger(error, 'compare-hash.js');
         return false;
     }
 }

@@ -1,5 +1,4 @@
 import db from "../db.js";
-import logger from "../../logger/index.js";
 import hash from "../../helpers/hash.js";
 import tokenGenerator from "../../helpers/tokenGenerator.js";
 
@@ -30,7 +29,6 @@ const createUser = async (user) => {
 
         return user;
     } catch (err) {
-        logger.errLogger(err, 'createUser.js');
         console.error('Error in createUser.js:', err);
         return false;
     }

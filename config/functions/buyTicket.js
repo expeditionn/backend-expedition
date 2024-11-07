@@ -10,7 +10,6 @@ const buyTicket = async (user_id, ticket_id) => {
         await db.query(query2, values2);
         return true;
     } catch (err) {
-        logger.errLogger(err, 'buyTicket.js');
         console.error('Error in buyTicket.js:', err);
         return false;
     }

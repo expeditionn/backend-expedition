@@ -1,5 +1,4 @@
-import logger from "../../logger/index.js";
-import createUser from "../../database/functions/createUser.js"
+import createUser from "../../config/functions/createUser.js"
 
 
 export default({
@@ -19,7 +18,6 @@ export default({
             res.status(200).json({msg: 'User created successfully', email: req.body.email, token: result.id});
             return;
         }catch(error){
-            logger.errLogger(error, 'signup.js');
             console.error('Error in signup.js:', error);
             res.status(500).json({err: 'Internal Server Error'});
             return;

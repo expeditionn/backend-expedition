@@ -4,7 +4,6 @@ import checkDb from './database/checkDb.js';
 import checkTables from './database/tables/index.js'
 import routes from './routes/index.js';
 import cors from 'cors';
-import logger from './logger/index.js';
 
 env.config();
 
@@ -35,7 +34,6 @@ const initializeServer = async () => {
             console.log('Server started at port ' + port);
         });
     } catch (error) {
-        logger.errLogger(error, 'initializeServer');
         console.error('Error setting up server:', error);
     }
 };

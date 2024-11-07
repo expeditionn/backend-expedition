@@ -1,5 +1,4 @@
 import db from "../db.js";
-import logger from "../../logger/index.js";
 import hash from "../../helpers/hash.js";
 import tokenGenerator from "../../helpers/tokenGenerator.js";
 
@@ -33,7 +32,6 @@ const createUser = async (user) => {
         await db.query(query, values);
         return user;
     } catch (error) {
-        logger.errLogger(error, 'createSeller.js');
         console.error('Error in createSeller.js:', error);
         return false;
     }

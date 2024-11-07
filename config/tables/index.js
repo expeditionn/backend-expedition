@@ -1,4 +1,3 @@
-import logger from '../../logger/index.js';
 import db from '../db.js';
 import userQuery from './userTable.js';
 import ticketQuery from './tickets.js';
@@ -11,7 +10,6 @@ const runQuery = async (query, tableName) => {
         console.log(`${tableName} Checked`);
         return true;
     } catch (err) {
-        logger.errLogger(JSON.stringify(err), `${tableName} Table check failed`);
         console.error(`Error checking ${tableName} Table:`, err);
         return false;
     }

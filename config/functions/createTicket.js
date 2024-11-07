@@ -1,5 +1,4 @@
 import db from '../db.js';
-import logger from '../../logger/index.js';
 import tokenGenerator from '../../helpers/tokenGenerator.js';
 
 const createTicket = async (data) => {
@@ -27,7 +26,6 @@ const createTicket = async (data) => {
 
         return { id: data.id };
     } catch (error) {
-        logger.errLogger(error, 'createTicket.js');
         console.error('Error in createTicket.js:', error);
         return { err: 'Internal Server Error' };
     }

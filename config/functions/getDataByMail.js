@@ -1,5 +1,4 @@
 import db from '../db.js';
-import logger from '../../logger/index.js';
 
 const getDataByMail = async (mail, type) => {
     const tableName = type === 'user' ? 'user' : 'seller';
@@ -13,7 +12,6 @@ const getDataByMail = async (mail, type) => {
         }
         return rows[0];
     } catch (err) {
-        logger.errLogger(err, 'getDataByMail.js');
         console.error('Error in getDataByMail.js:', err);
         return false;
     }

@@ -1,4 +1,3 @@
-import logger from "../../logger/index.js";
 import getDataByMail from "../../database/functions/getDataByMail.js";
 import hash from "../../helpers/hash.js";
 
@@ -29,7 +28,6 @@ export default {
             }
             res.status(401).json({err: 'Unauthorized'});
         } catch(err){
-            logger.errLogger(err, 'sellerSignIn.js');
             console.error('Error in sellerSignIn.js:', err);
             res.status(500).json({err: 'Internal Server Error'});
             return;

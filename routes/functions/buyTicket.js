@@ -1,4 +1,3 @@
-import logger from "../../logger/index.js";
 import getUserById from "../../database/functions/getDataById.js";
 import checkTicketAvailability from "../../database/functions/checkTicketAvailability.js";
 import buyTicket from "../../database/functions/buyTicket.js";
@@ -38,7 +37,6 @@ export default ({
 
 
         }catch(err){
-            logger.errLogger(err, 'buyTicket.js');
             console.error('Error in buyTicket.js:', err);
             res.status(500).json({err: 'Internal Server Error'});
             return;
