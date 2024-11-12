@@ -1,41 +1,39 @@
 import express from 'express';
-import env from 'dotenv';
-import checkDb from './database/checkDb.js';
-import checkTables from './database/tables/index.js'
-import routes from './routes/index.js';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import pool from './config/db.config.js';
+import userRoutes from './routes/user.routes.js';
+import availableTicketsRoutes from './routes/availableTickets.routes.js';
+import ticketsSoldRoutes from './routes/ticketsSold.routes.js';
+import authRoutes from './routes/auth.routes.js';
+import sellerRoutes from './routes/seller.routes.js';
+import searchRoutes from './routes/search.routes.js';
 
-env.config();
+dotenv.config();
 
 const app = express();
-app.use(express.json());
-app.use(cors());
-
 const port = process.env.PORT || 8000;
 
-const initializeServer = async () => {
-    try {
-        await routes.loadRoutes();
-        routes.routes.forEach(item => {
-            app[item.method](`/api${item.url}`, item.func);
-        });
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-        app.listen(port, async () => {
-            const dbStatus = await checkDb();
-            if(!dbStatus){
-                console.error('Database connection failed');
-                return;
-            }
-            const checkTable = await checkTables();
-            if(!checkTable){
-                console.error('Table creation failed');
-                return;
-            }
-            console.log('Server started at port ' + port);
-        });
-    } catch (error) {
-        console.error('Error setting up server:', error);
-    }
-};
+app.get('/test', async (req, res) => {
+  try {
+    const [result] = await pool.query('SELECT 1');
+    res.json({ message: 'Database connection successful', result });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
-initializeServer();
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
+app.use('/available-tickets', availableTicketsRoutes);
+app.use('/ticket-sold', ticketsSoldRoutes);
+app.use('/seller', sellerRoutes);
+app.use('/search', searchRoutes); // Register search routes
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
