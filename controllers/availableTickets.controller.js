@@ -1,6 +1,7 @@
 import AvailableTicket from '../models/availableTickets.model.js';
 import {v4 as uuidv4} from 'uuid';
 
+
 export const createAvailableTicket = async (req, res) => {
   const ticketData = req.body;
   try {
@@ -65,7 +66,7 @@ export const getTicketById = async (req, res) => {
 };
 
 export const searchTickets = async (req, res) => {
-  const { query } = req.query;
+  const query = req.query;
   try {
     const tickets = await AvailableTicket.search(query);
     res.status(200).json({ tickets });

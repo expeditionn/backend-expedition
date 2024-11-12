@@ -32,7 +32,7 @@ app.use('/user', userRoutes);
 app.use('/available-tickets', availableTicketsRoutes);
 app.use('/ticket-sold', ticketsSoldRoutes);
 app.use('/seller', sellerRoutes);
-app.use('/search', searchRoutes); // Register search routes
+app.use('/api', searchRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

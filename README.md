@@ -190,10 +190,10 @@
     "ticket": { /* ticket details */ }
   }
   ```
-  
+
 
 #### Search Tickets
-- **Endpoint:** `GET /availableTickets/search`
+- **Endpoint:** `GET /api/search`
 - **Description:** Search for tickets based on query parameters.
 - **Query Parameters:** `?type=Music&place=Stadium`
 - **Response:**
@@ -221,7 +221,7 @@
   ```
 
 #### Get Sold Tickets
-- **Endpoint:** `GET /ticketsSold/sold`
+- **Endpoint:** `GET /ticket-sold/sold`
 - **Description:** Retrieve all sold tickets (User only).
 - **Headers:**
   ```
@@ -258,7 +258,7 @@
   ```
 
 #### Delete User
-- **Endpoint:** `DELETE /`
+- **Endpoint:** `DELETE /user`
 - **Description:** Delete user account.
 - **Headers:**
   ```

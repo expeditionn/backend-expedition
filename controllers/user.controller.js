@@ -5,7 +5,7 @@ export const updateUserProfile = async (req, res) => {
   const updatedData = req.body;
   try {
     await User.updateById(userId, updatedData);
-    res.status(200).json({ message: 'Profile updated successfully.' });
+    res.status(200).json({ message: 'Profile updated successfully.' , updatedData});
   } catch (error) {
     res.status(500).json({ message: 'Error updating profile.', error });
   }

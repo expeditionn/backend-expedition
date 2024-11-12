@@ -6,7 +6,7 @@ import { updateUserProfile, deleteUser, getUserProfile } from '../controllers/us
 const router = express.Router();
 
 router.put('/profile', authenticateToken, updateUserProfile);
-router.get('/profile', authenticateToken, getUserProfile); // New route to get user profile
+router.get('/profile', authenticateToken, getUserProfile);
 router.delete('/', authenticateToken, deleteUser);
 
 export default router;

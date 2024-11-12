@@ -53,8 +53,7 @@ class AvailableTicket {
 
   static async search(searchQuery) {
     const query = 'SELECT * FROM availableTickets WHERE title LIKE ? OR type LIKE ? OR place LIKE ? OR show_name LIKE ?';
-    const likeQuery = `%${searchQuery}%`;
-    const [rows] = await pool.query(query, [likeQuery, likeQuery, likeQuery, likeQuery]);
+    const [rows] = await pool.query(query, [searchQuery.title, searchQuery.type, searchQuery.place, searchQuery.show_name]);
     return rows;
   }
 }
